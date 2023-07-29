@@ -1,0 +1,46 @@
+<!-- public/register.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+</head>
+<body>
+  <h1>Register</h1>
+
+  <form id="registerForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#registerForm').submit(function(event) {
+        event.preventDefault();
+
+        var username = $('#username').val();
+        var password = $('#password').val();
+        
+        $.ajax({
+          url: '/api/auth/register',
+          method: 'POST',
+          data: { username: username, password: password },
+          success: function(response) {
+            console.log(response);
+            // Handle successful registration
+          },
+          error: function(error) {
+            console.log(error);
+            // Handle registration error
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

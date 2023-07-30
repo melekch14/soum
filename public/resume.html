@@ -14,7 +14,6 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="./assets/css/dashlite.css?ver=3.1.3">
     <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=3.1.3">
-
     <style>
         .dataTable {
             border-collapse: collapse;
@@ -193,8 +192,8 @@
                                                     class="nk-menu-text">Dépouillement</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/project-list.html" class="nk-menu-link"><span
-                                                    class="nk-menu-text">Retrait dossier</span></a>
+                                            <a href="resume.html" class="nk-menu-link"><span
+                                                    class="nk-menu-text">Synthése</span></a>
                                         </li>
                                     </ul>
                                 </li>
@@ -238,7 +237,6 @@
                 <div class="nk-content nk-content-fluid">
                     <div class="container-xl wide-xl">
                         <div class="nk-content-body">
-
                             <div class="card card-preview">
                                 <div class="card-inner">
                                     <div class="row gy-4">
@@ -258,7 +256,7 @@
                                             <div class="form-group">
                                                 <label class="form-label" style="color: white;">s</label>
                                                 <div class="form-control-wrap">
-                                                    <a id="display_dep" href="#" class="btn btn-success">Afficher</a>
+                                                    <a id="display_syn" href="#" class="btn btn-success">Afficher</a>
                                                 </div>
 
                                             </div>
@@ -270,50 +268,28 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <div class="card-head">
-                                        <h5 class="card-title">Dépouillement par appel d'offre</h5>
+                                        <h5 class="card-title">Synthése</h5>
                                     </div>
 
-                                    <div class="table-container">
-                                        <table id="dataTable" class="dataTable">
-                                            <tr>
-                                                <th colspan='3' style='border: none; background-color: white;'></th>
-                                            </tr>
-                                            <tr>
-                                                <th colspan="3" style="border: none; background-color: white;"></th>
-                                                <!-- This part will be populated dynamically -->
-                                            </tr>
-                                            <tr>
-                                                <th colspan="3" style="border: none; background-color: white;"></th>
-                                                <!-- This part will be populated dynamically -->
-                                            </tr>
-
+                                    <div class="table-container" id="dataContainer">
+                                        <table id="lotDataTable" class="dataTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Lot</th>
+                                                    <th>Vocation</th>
+                                                    <th>Surface</th>
+                                                    <th>Prix Max par lot</th>
+                                                    <th>Prix Min par lot</th>
+                                                    <th>Prix Moyen par lot</th>
+                                                    <th>NB Sou.</th>
+                                                    <th>Nom</th>
+                                                    <th>Meilleur Prix HTVA</th>
+                                                    <th>chiffre affaire</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
                                         </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-inner">
-                                    <div class="card-head">
-                                        <h5 class="card-title">Dépouillement</h5>
-                                    </div>
-
-                                    <div class="table-container">
-                                        <table id="dataTables" class="dataTable">
-
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-inner">
-                                    <div class="card-head">
-                                        <h5 class="card-title">Par secteur</h5>
-                                    </div>
-
-                                    <div class="table-container" id="secteur">
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -338,10 +314,7 @@
     </div>
     <script src="./assets/js/bundle.js?ver=3.1.3"></script>
     <script src="./assets/js/scripts.js?ver=3.1.3"></script>
-    <script>
-
-    </script>
-    <script src="scripts/depouillement.js"></script>
+    <script src="./scripts/resume.js"></script>
 </body>
 
 </html>

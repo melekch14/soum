@@ -46,6 +46,18 @@ exports.getLotByAppel = (req, res) => {
   });
 };
 
+exports.getLotByLot = (req, res) => {
+  const id = req.params.id;
+  Lot.getLotByLot(id, (err, results) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ message: 'Internal server error' });
+    } else {
+      res.status(200).json(results);
+    }
+  });
+};
+
 exports.getLotById = (req, res) => {
   const id = req.params.id;
   Lot.getLotById(id, (err, results) => {

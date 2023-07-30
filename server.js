@@ -15,6 +15,7 @@ const resultatSoumissionRoutes = require('./routes/resultatSoumissionRoutes');
 const vocationRoutes = require('./routes/VocationRoutes');
 const appelLotissementRoutes = require('./routes/AppelLotissementRoutes');
 const excelRouter = require('./routes/excelRouter');
+const rapportRouter = require('./routes/RapportRoutes');
 const { sendDataAsJson } = require('./controllers/dataController');
 
 
@@ -40,6 +41,7 @@ app.use('/api/resultat-soumission', resultatSoumissionRoutes);
 app.use('/api/vocation', vocationRoutes);
 app.use('/api/appelLotissement', appelLotissementRoutes);
 app.use('/api/import', excelRouter);
+app.use('/api/rapport', rapportRouter);
 app.get('/data/:id', sendDataAsJson);
 
 app.listen(PORT, () => {
